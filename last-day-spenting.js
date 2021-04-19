@@ -1,11 +1,11 @@
-// author @nikos Lamprakakis
+// author @nikos_lamprakakis
 
 function main() {
  
   //Step 1: Connect Google Ads to the Google Sheet
   var spreadsheetUrl = 'YOUR-GOOGLE-SHEET-FILE';
   var spreadsheet = SpreadsheetApp.openByUrl(spreadsheetUrl);
-  var ss = spreadsheet.getSheetByName('Abbott');
+  var ss = spreadsheet.getSheetByName('SHEET_NAME');
   
   
   //Step 2: Get lastAmount of the Enabled Campaigns
@@ -31,7 +31,8 @@ Logger.log(sheetarray);
   
     if (sheetarray.length > 0) {
      
-    ss.getRange(26, 1, sheetarray.length, sheetarray[0].length).setValues(sheetarray);
+     // Set Collumn and Row.
+    ss.getRange(1, 1, sheetarray.length, sheetarray[0].length).setValues(sheetarray); 
      
   } 
 }
